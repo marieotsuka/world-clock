@@ -84,8 +84,8 @@ $(document).ready(function(){
 	"Alaska, US"
 	];
 
-	$('.frame').each(function( index) {
-	   	$(this).append('<div class="label">'+ locations[index]+ '</div>');
+	$('.frame').each(function(index) {
+	   	$(this).append('<div class="label hide">'+ locations[index]+ '</div>');
 	 });
 
 
@@ -97,8 +97,16 @@ $(document).ready(function(){
 		}else{
 			$('.h').text("2");
 		}
-		$('img').fadeOut(600);
-		$('.label').fadeIn(600);
+
+		$('img').each(function(){
+			$(this).removeClass("show");
+			$(this).addClass("hide");
+		});
+
+		$('.label').each(function(){
+			$(this).removeClass("hide");
+			$(this).addClass("show");
+		});
 
 	}
 
