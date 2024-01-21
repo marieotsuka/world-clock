@@ -1,20 +1,9 @@
 $(document).ready(function(){
 	var type = $('body').attr('id');
-
-	// $('#switch').click(function(){
-	// 	type = "PM";
-	// 	$('img').each(function(){
-	// 		var oldsrc = $(this).attr('src');
-	// 		var newsrc = oldsrc.replace("AM", "PM");
-	// 		$(this).attr('src', newsrc);
-	// 	});
-
-	// });
-
-
-
 	var ms = 0, seconds = 0, minutes = 0, hours = 0, t;
-	
+	var audio = new Audio('olan-mill_cut.mp3');
+
+
 	function add() {
 	    ms++;
 	    if (ms >= 60) {
@@ -44,7 +33,11 @@ $(document).ready(function(){
 	    t = setTimeout(add, 16.67);
 	}
 
-	timer();
+	$('.timer').click(function(){
+		timer();
+		audio.play();
+	});
+	
 
 
 	function showImage(m,s,h){
